@@ -14,7 +14,7 @@ class Form extends React.Component {
                     <label htmlFor="time">Tempo</label>
                     <input type="time" name="time" id="time" step="1" min="00:00:00" max="01:30:00" placeholder="" required/>
                 </div>
-                <Button></Button>
+                <Button>Adicionar</Button>
             </form>
         )
     }
