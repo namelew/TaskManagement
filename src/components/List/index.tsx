@@ -1,16 +1,26 @@
+import { useState } from "react";
+
 const List = () => {
+    const tasks = [
+        {
+            name:'React',
+            time: "2:00:00",
+        },
+        {
+            name:'Javascript',
+            time: "1:00:00",
+        },
+        {
+            name:'Typescript',
+            time: "3:00:00",
+        },
+    ]
+
     return (
         <aside>
             <h2> Estudos do dia </h2>
             <ul>
-                <li>
-                    <h3>React</h3>
-                    <span>02:00:00</span>
-                </li>
-                <li>
-                    <h3>Javascript</h3>
-                    <span>01:00:00</span>
-                </li>
+            { tasks.map((task,index) => <li key={index}> <h3>{task.name}</h3> <span>{task.time}</span> </li>) }
             </ul>
         </aside>
     )
