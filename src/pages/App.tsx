@@ -10,8 +10,8 @@ function App() {
   return (
     <div className={style.AppStyle}>
       <Form/>
-      <Stopwatch/>
       <List/>
+      <Stopwatch/>
     </div>
   );
 }
