@@ -12,7 +12,7 @@ const Button = ({children, type = 'button', onClick} : Props) => {
         <button onClick={onClick} type={type} className={style.button}>
             {children}
         </button>
-    )
+    );
 }
 
 export default Button;

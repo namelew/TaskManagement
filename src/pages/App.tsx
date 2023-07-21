@@ -14,9 +14,9 @@ function App() {
       setSelected(undefined);
       setTasks(old => old.map(current => {
         if (current.id === task.id) {
-          return {...current, selected: false, completed: true}
+          return {...current, selected: false, completed: true};
         }
-        return current
+        return current;
       }));
     }
   }

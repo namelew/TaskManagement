@@ -33,7 +33,7 @@ const Form = ( { setTasks } : Props) => {
             </div>
             <Button type="submit">Adicionar</Button>
         </form>
-    )
+    );
 }
 
 export default Form;

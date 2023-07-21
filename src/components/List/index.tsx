@@ -15,7 +15,7 @@ const List = ({ tasks, selectTask } : Props) => {
             { tasks.map((task, _) => <Item key={task.id} selectTask={selectTask} task={task}/>) }
             </ul>
         </aside>
-    )
+    );
 }
 
 export default List;

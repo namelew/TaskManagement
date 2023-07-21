@@ -16,7 +16,7 @@ const Clock = ({ time } : Props) => {
             <span className={style.clockNumber}>{clockNumbers.secDozens}</span>
             <span className={style.clockNumber}>{clockNumbers.secUnits}</span>
         </>
-    )
+    );
 }
 
 export default Clock;

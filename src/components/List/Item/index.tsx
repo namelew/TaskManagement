@@ -14,7 +14,7 @@ const Item = ( {task, selectTask}: Props ) => {
             <span>{task.time}</span>
             {task.completed && <span className={style.done} aria-label="task done"></span>}
         </li>
-    )
+    );
 }
 
 export default Item;

@@ -35,7 +35,7 @@ const Stopwatch = ({ selected, endTask } : Props) => {
             </div>
             <Button onClick={() => {regressive(time)}}>Começar!</Button>
         </div>
-    )
+    );
 }
 
 export default Stopwatch;
