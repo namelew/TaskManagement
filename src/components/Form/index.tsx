@@ -7,7 +7,7 @@ import { v4 as uuidv4} from "uuid";
 class Form extends React.Component<{setTasks: React.Dispatch<React.SetStateAction<ITask[]>>}> {
     state = {
         name: "",
-        time: "",
+        time: "00:00:00",
     }
     addTask(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
