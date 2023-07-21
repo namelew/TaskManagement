@@ -11,7 +11,7 @@ interface Props {
 
 const Stopwatch = ({ selected } : Props) => {
 
-    const [time, setTime] = useState<Number>( selected?.time ? toSeconds(selected.time) : 0);
+    const [time, setTime] = useState<number>( selected?.time ? toSeconds(selected.time) : 0);
 
     useEffect(() => { setTime(selected?.time ? toSeconds(selected.time) : 0) }, [selected]);
 
@@ -19,7 +19,7 @@ const Stopwatch = ({ selected } : Props) => {
         <div className={style.stopwatch}>
             <p className={style.title}>Escolha um card e inicie o cronômetro</p>
             <div className={style.clockWrapper}>
-                <Clock/>
+                <Clock time={time}/>
             </div>
             <Button>Começar!</Button>
         </div>
