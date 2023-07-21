@@ -7,9 +7,10 @@ import { toSeconds } from "../../common/utils/time";
 
 interface Props {
     selected: ITask | undefined,
+    endTask: (task:ITask|undefined) => void,
 }
 
-const Stopwatch = ({ selected } : Props) => {
+const Stopwatch = ({ selected, endTask } : Props) => {
 
     const [time, setTime] = useState<number>( selected?.time ? toSeconds(selected.time) : 0);
 
@@ -21,6 +22,7 @@ const Stopwatch = ({ selected } : Props) => {
                 setTime(counter - 1);
                 return regressive(counter - 1);
             }
+            endTask(selected)
         }, 1000)
     }
     
