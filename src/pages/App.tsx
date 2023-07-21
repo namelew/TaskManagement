@@ -13,7 +13,7 @@ function App() {
     <div className={style.AppStyle}>
       <Form setTasks={setTasks}/>
       <List tasks={tasks} selectTask={ (task:ITask) => {setSelected(task); setTasks(old => old.map(current => ({...current, selected: current.id === task.id})))}}/>
-      <Stopwatch/>
+      <Stopwatch selected={selected}/>
     </div>
   );
 }
