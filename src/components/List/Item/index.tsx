@@ -2,11 +2,16 @@ import React from "react";
 import style from './Item.module.scss'
 import { ITask } from "../../../types/tasks";
 
-const Item = ( {id ,name, time, selected, completed}: ITask ) => {
+interface Props {
+    task: ITask,
+    selectTask: (task: ITask) => void
+}
+
+const Item = ( {task, selectTask}: Props ) => {
     return (
-        <li className={style.item}>
-            <h3>{name}</h3>
-            <span>{time}</span>
+        <li className={`${style.item} ${task.selected ? style.selectedItem : ''}`} onClick={() => selectTask(task)}>
+            <h3>{task.name}</h3>
+            <span>{task.time}</span>
         </li>
     )
 }
