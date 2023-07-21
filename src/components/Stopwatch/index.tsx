@@ -1,5 +1,5 @@
 import { ITask } from "../../types/tasks";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from "../Button";
 import Clock from "./Clock";
 import style from "./Stopwatch.module.scss"
@@ -12,6 +12,8 @@ interface Props {
 const Stopwatch = ({ selected } : Props) => {
 
     const [time, setTime] = useState<Number>( selected?.time ? toSeconds(selected.time) : 0);
+
+    useEffect(() => { setTime(selected?.time ? toSeconds(selected.time) : 0) }, [selected]);
 
     return (
         <div className={style.stopwatch}>
