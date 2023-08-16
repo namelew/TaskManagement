@@ -11,21 +11,20 @@ interface Props {
 }
 
 const Stopwatch = ({ selected, endTask } : Props) => {
-
     const [time, setTime] = useState<number>( selected?.time ? toSeconds(selected.time) : 0);
+    const [timeoutID, setTimeoutID] = useState<NodeJS.Timeout>();
 
     useEffect(() => { setTime(selected?.time ? toSeconds(selected.time) : 0) }, [selected]);
 
     function regressive(counter: number = 0) {
-        setTimeout(() => {
+        setTimeoutID(setTimeout(() => {
             if(counter > 0) {
                 setTime(counter - 1);
                 return regressive(counter - 1);
             }
             endTask(selected)
-        }, 1000)
+        }, 1000))
     }
-    
 
     return (
         <div className={style.stopwatch}>
@@ -33,7 +32,10 @@ const Stopwatch = ({ selected, endTask } : Props) => {
             <div className={style.clockWrapper}>
                 <Clock time={time}/>
             </div>
-            <Button onClick={() => {regressive(time)}}>Começar!</Button>
+            <div>
+                <Button onClick={() => {regressive(time)}}>Começar</Button>
+                <Button onClick={() => {clearTimeout(timeoutID); setTimeoutID(undefined); endTask(selected)}}>Finalizar</Button>
+            </div>
         </div>
     );
 }

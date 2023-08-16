@@ -21,6 +21,11 @@
     .title {
       font-size: 2rem;
     }
+
+    button + button {
+      margin-left: 10px;
+    }
+  
   
     button {
       background-color: #88bcd1;
