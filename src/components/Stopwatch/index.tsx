@@ -39,8 +39,8 @@ const Stopwatch = ({ selected, endTask } : Props) => {
                 <Clock time={time}/>
             </div>
             <div>
-                <Button onClick={() => {regressive(time)}} className={style.button} >Começar</Button>
-                <Button onClick={() => {finish()}} className={style.button}>Finalizar</Button>
+                <Button onClick={() => {regressive(time)}}>Começar</Button>
+                <Button onClick={() => {finish()}}>Finalizar</Button>
             </div>
         </div>
     );
