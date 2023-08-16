@@ -9,7 +9,7 @@ interface Props {
 
 const Item = ( {task, selectTask}: Props ) => {
     return (
-        <li className={`${style.item} ${task.selected ? style.selectedItem : ''} ${task.completed ? style.doneItem : ''}`} onClick={() => !task.completed && selectTask(task)}>
+        <li className={`${style.item} ${task.selected ? style.selectedItem : ''} ${task.completed ? style.doneItem : ''}`} onClick={() => !task.completed && !task.selected && selectTask(task)}>
             <h3>{task.name}</h3>
             <span>{task.time}</span>
             {task.completed && <span className={style.done} aria-label="task done"></span>}
