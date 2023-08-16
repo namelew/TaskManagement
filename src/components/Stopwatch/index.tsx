@@ -26,6 +26,12 @@ const Stopwatch = ({ selected, endTask } : Props) => {
         }, 1000))
     }
 
+    const finish = () => {
+        clearTimeout(timeoutID);
+        setTimeoutID(undefined);
+        endTask(selected);
+    }
+
     return (
         <div className={style.stopwatch}>
             <p className={style.title}>Escolha um card e inicie o cronômetro</p>
@@ -34,7 +40,7 @@ const Stopwatch = ({ selected, endTask } : Props) => {
             </div>
             <div>
                 <Button onClick={() => {regressive(time)}}>Começar</Button>
-                <Button onClick={() => {clearTimeout(timeoutID); setTimeoutID(undefined); endTask(selected)}}>Finalizar</Button>
+                <Button onClick={() => {finish()}}>Finalizar</Button>
             </div>
         </div>
     );
